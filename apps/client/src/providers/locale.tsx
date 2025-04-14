@@ -2,7 +2,7 @@ import "@/client/libs/dayjs";
 
 import { i18n } from "@lingui/core";
 import { detect, fromStorage, fromUrl } from "@lingui/detect-locale";
-import { I18nProvider, Trans } from "@lingui/react";
+import { I18nProvider } from "@lingui/react";
 import { languages } from "@reactive-resume/utils";
 import { useEffect, useState } from "react";
 
@@ -10,6 +10,18 @@ import { defaultLocale, dynamicActivate } from "../libs/lingui";
 import { updateUser } from "../services/user";
 import { useAuthStore } from "../stores/auth";
 import { logger } from "../libs/logger";
+import { LoadingScreen } from "../components/loading-screen";
+
+// Initialize with default messages
+try {
+  const { messages } = require(`../locales/${defaultLocale}/messages.js`);
+  i18n.load(defaultLocale, messages);
+  i18n.activate(defaultLocale);
+} catch (error) {
+  logger.error("Failed to load initial messages:", error);
+  i18n.load(defaultLocale, {});
+  i18n.activate(defaultLocale);
+}
 
 type Props = {
   children: React.ReactNode;
@@ -18,11 +30,13 @@ type Props = {
 export const LocaleProvider = ({ children }: Props) => {
   const userLocale = useAuthStore((state) => state.user?.locale ?? defaultLocale);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadTranslations = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         
         // First try to detect locale from various sources
         const detectedLocale =
@@ -39,20 +53,22 @@ export const LocaleProvider = ({ children }: Props) => {
         // Set default messages for fallback
         if (finalLocale !== defaultLocale) {
           try {
-            const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
-            i18n.load(defaultLocale, defaultMessages);
+            const { messages } = await import(`../locales/${defaultLocale}/messages.js`);
+            i18n.load(defaultLocale, messages);
           } catch (error) {
             logger.error("Failed to load default locale messages:", error);
           }
         }
       } catch (error) {
         logger.error("Failed to load translations:", error);
+        setError("Failed to load translations. Using default language.");
         
         // As a last resort, try to load default locale
         try {
           await dynamicActivate(defaultLocale);
         } catch (fallbackError) {
           logger.error("Critical: Failed to load default locale:", fallbackError);
+          setError("Critical: Failed to load any translations.");
         }
       } finally {
         setIsLoading(false);
@@ -62,19 +78,8 @@ export const LocaleProvider = ({ children }: Props) => {
     void loadTranslations();
   }, [userLocale]);
 
-  if (isLoading) {
-    return (
-      <div className="flex h-screen w-screen items-center justify-center">
-        <div className="text-center">
-          <div className="mb-2 text-2xl font-bold">
-            <Trans id="loading">Loading...</Trans>
-          </div>
-          <div className="text-sm opacity-75">
-            <Trans id="loading.message">Please wait while we load your preferred language.</Trans>
-          </div>
-        </div>
-      </div>
-    );
+  if (isLoading || error) {
+    return <LoadingScreen message={error} />;
   }
 
   return <I18nProvider i18n={i18n}>{children}</I18nProvider>;
