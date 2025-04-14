@@ -1,9 +1,25 @@
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Outlet } from "react-router";
+import { i18n } from "@lingui/core";
+import { I18nProvider } from "@lingui/react";
+import { defaultLocale } from "../constants/locale";
 
 import { helmetContext } from "../constants/helmet";
 import { useArtboardStore } from "../store/artboard";
+
+// Load default messages immediately
+const loadDefaultMessages = async () => {
+  try {
+    const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
+    i18n.load(defaultLocale, defaultMessages);
+    i18n.activate(defaultLocale);
+  } catch (error: unknown) {
+    console.error("Failed to load artboard messages:", error);
+  }
+};
+
+void loadDefaultMessages();
 
 export const Providers = () => {
   const resume = useArtboardStore((state) => state.resume);
@@ -32,8 +48,10 @@ export const Providers = () => {
   if (!resume) return null;
 
   return (
-    <HelmetProvider context={helmetContext}>
-      <Outlet />
-    </HelmetProvider>
+    <I18nProvider i18n={i18n}>
+      <HelmetProvider context={helmetContext}>
+        <Outlet />
+      </HelmetProvider>
+    </I18nProvider>
   );
 };
