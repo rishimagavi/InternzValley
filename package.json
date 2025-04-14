@@ -29,8 +29,8 @@
     "prisma:migrate": "pnpm exec prisma migrate deploy",
     "prisma:migrate:dev": "pnpm exec prisma migrate dev",
     "messages:extract": "pnpm exec lingui extract --clean --overwrite",
-    "lingui:extract": "pnpm exec lingui extract",
-    "lingui:compile": "pnpm exec lingui compile"
+    "lingui:extract": "lingui extract",
+    "lingui:compile": "lingui compile"
   },
   "devDependencies": {
     "@babel/core": "^7.26.7",

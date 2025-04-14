@@ -8,11 +8,15 @@ module.exports = {
       include: ["src"],
     },
   ],
-  format: "po",
+  format: "js",
+  compileNamespace: "ts",
+  orderBy: "messageId",
+  pseudoLocale: "pseudo",
+  fallbackLocales: {
+    default: "en-US",
+  },
   formatOptions: {
     lineNumbers: false,
+    origins: false,
   },
-  orderBy: "messageId",
-  compileNamespace: "ts",
-  runtimeConfigModule: ["@lingui/core", "i18n"],
 }; 
