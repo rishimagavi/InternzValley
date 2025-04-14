@@ -22,6 +22,16 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "您已成功啟用雙因子驗證。"
 
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:12
+msgid "loading"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:18
+msgid "loading.message"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} 個履歷範本可以選擇"
@@ -55,23 +65,13 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>已啟用雙因子驗證。</0>每次登入時，系統都會要求您輸入驗證碼。"
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
 msgstr "一個免費且開源的簡歷建立工具"
-
-#: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "一個免費且開放原始碼的履歷建立工具，可簡化建立、更新及分享履歷的程序。"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "連接已複製到您的剪貼簿。"
-
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "一個由 <0>Amruth Pillai</0> 的熱血專案"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -242,7 +242,6 @@ msgstr "邊框弧度"
 msgid "Built with"
 msgstr "使用建立"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "來自社區，服務社區。"
@@ -354,6 +353,14 @@ msgstr "立即建立"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "建立履歷表範本"
+
+#: apps/client/src/providers/locale.tsx:70
+msgid "Critical: Failed to load any translations:"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:68
+msgid "Critical: Failed to load default locale ({defaultLocale})"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
@@ -561,6 +568,34 @@ msgstr "探索反應式履歷中提供的範本並查看用它們製作的履歷
 msgid "Export"
 msgstr "導出"
 
+#: apps/client/src/libs/lingui.ts:60
+msgid "Failed to load dayjs locale for: {locale}"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:64
+msgid "Failed to load default messages"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:64
+msgid "Failed to load messages for locale: {locale}"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:37
+msgid "Failed to load messages synchronously, trying async..."
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:60
+msgid "Failed to load translations:"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:71
+msgid "Failed to load translations. Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:72
+msgid "Falling back to default locale ({defaultLocale})"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "檔案"
@@ -568,10 +603,6 @@ msgstr "檔案"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "檔案類型"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "最後，"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -626,6 +657,11 @@ msgstr "永久免費"
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
 msgstr "友善"
+
+#: apps/client/src/pages/home/components/footer.tsx:16
+#: apps/client/src/pages/home/sections/hero/index.tsx:29
+msgid "From blank page to dream job — resume building made delightful."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
@@ -769,6 +805,14 @@ msgstr "詳細資訊"
 msgid "Institution"
 msgstr "機構"
 
+#: apps/client/src/pages/home/page.tsx:24
+msgid "InternzValley Resume Builder"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:45
+msgid "Invalid messages found for locale: {locale}"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
 msgstr "發行者"
@@ -860,10 +904,6 @@ msgstr "信件"
 msgid "Level"
 msgstr "等級"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "以 <0>MIT</0> 授權"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "亮色"
@@ -884,6 +924,10 @@ msgstr "LinkedIn、JSON Resume 等。"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "列表"
+
+#: apps/client/src/providers/locale.tsx:81
+msgid "Loading translations..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -979,6 +1023,10 @@ msgstr "網路"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "新密碼"
+
+#: apps/client/src/providers/locale.tsx:47
+msgid "No messages found"
+msgstr ""
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1130,10 +1178,6 @@ msgstr "由 <0> 圖標</0> 提供"
 msgid "Primary Color"
 msgstr "主要顏色"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
-msgid "Privacy Policy"
-msgstr "隱私政策"
-
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
@@ -1155,7 +1199,6 @@ msgstr "發行者"
 msgid "Raise an issue"
 msgstr "提出問題"
 
-#: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1166,8 +1209,6 @@ msgstr "提出問題"
 #: apps/client/src/pages/builder/page.tsx:60
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
@@ -1440,6 +1481,10 @@ msgstr "統計資料只適用於公開履歷。"
 msgid "Store your backup codes securely"
 msgstr "安全儲存您的備份代碼"
 
+#: apps/client/src/pages/home/sections/hero/index.tsx:24
+msgid "Streamline your job search with a resume that works."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
@@ -1670,10 +1715,6 @@ msgstr "確認已正確設定雙因子驗證"
 msgid "Verify your email address"
 msgstr "確認你的電子郵件地址"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "版本 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "查閱"
@@ -1704,9 +1745,9 @@ msgstr "我們驗證您的電子郵件地址，只是為了確保您忘記密碼
 msgid "Website"
 msgstr "個人網站"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "最新版本的新功能"
+#: apps/client/src/pages/home/components/donation-banner.tsx:7
+msgid "Welcome to InternzValley Resume Builder - Create your professional resume for free!"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1779,4 +1820,3 @@ msgstr "放大"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "缩小"
-

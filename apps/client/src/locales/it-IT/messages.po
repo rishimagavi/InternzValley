@@ -22,6 +22,16 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Hai abilitato l'autenticazione a due fattori con successo."
 
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:12
+msgid "loading"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:18
+msgid "loading.message"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} modelli di curriculum tra cui scegliere"
@@ -55,23 +65,13 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>L'autenticazione a due fattori è abilitata.</0> Ti verrà chiesto di inserire un codice ogni volta che accedi."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
 msgstr "Un generatore di curriculum gratuito e open source"
-
-#: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "Un generatore di curriculum gratuito e open source che semplifica il processo di creazione, aggiornamento e condivisione del tuo curriculum."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "Il link è stato copiato negli appunti."
-
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Un progetto appassionato di <0>Amruth Pillai</0>"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -242,7 +242,6 @@ msgstr "Raggio del bordo"
 msgid "Built with"
 msgstr "Costruito con"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "Dalla comunità, per la comunità."
@@ -354,6 +353,14 @@ msgstr "Creane uno ora"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Creare un campione di curriculum"
+
+#: apps/client/src/providers/locale.tsx:70
+msgid "Critical: Failed to load any translations:"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:68
+msgid "Critical: Failed to load default locale ({defaultLocale})"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
@@ -561,6 +568,34 @@ msgstr "Esplora i modelli disponibili in Reactive Resume e visualizza i curricul
 msgid "Export"
 msgstr "Esporta"
 
+#: apps/client/src/libs/lingui.ts:60
+msgid "Failed to load dayjs locale for: {locale}"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:64
+msgid "Failed to load default messages"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:64
+msgid "Failed to load messages for locale: {locale}"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:37
+msgid "Failed to load messages synchronously, trying async..."
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:60
+msgid "Failed to load translations:"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:71
+msgid "Failed to load translations. Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:72
+msgid "Falling back to default locale ({defaultLocale})"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "File"
@@ -568,10 +603,6 @@ msgstr "File"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "Tipo di file"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Finalmente,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -626,6 +657,11 @@ msgstr "Gratis, per sempre"
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
 msgstr "Amichevole"
+
+#: apps/client/src/pages/home/components/footer.tsx:16
+#: apps/client/src/pages/home/sections/hero/index.tsx:29
+msgid "From blank page to dream job — resume building made delightful."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
@@ -769,6 +805,14 @@ msgstr "Informazioni"
 msgid "Institution"
 msgstr "Istituzione"
 
+#: apps/client/src/pages/home/page.tsx:24
+msgid "InternzValley Resume Builder"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:45
+msgid "Invalid messages found for locale: {locale}"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
 msgstr "Emittente"
@@ -860,10 +904,6 @@ msgstr "Lettera"
 msgid "Level"
 msgstr "Livello"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "Con licenza <0>MIT</0>"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "Chiaro"
@@ -884,6 +924,10 @@ msgstr "LinkedIn, curriculum JSON, ecc."
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "Lista"
+
+#: apps/client/src/providers/locale.tsx:81
+msgid "Loading translations..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -979,6 +1023,10 @@ msgstr "Rete"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Nuova Password"
+
+#: apps/client/src/providers/locale.tsx:47
+msgid "No messages found"
+msgstr ""
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1130,10 +1178,6 @@ msgstr "Offerto da <0>Icone semplici</0>"
 msgid "Primary Color"
 msgstr "Colore primario"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
-msgid "Privacy Policy"
-msgstr "Politica Sulla Privacy"
-
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
@@ -1155,7 +1199,6 @@ msgstr "Editore"
 msgid "Raise an issue"
 msgstr "Segnala un problema"
 
-#: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1166,8 +1209,6 @@ msgstr "Segnala un problema"
 #: apps/client/src/pages/builder/page.tsx:60
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
@@ -1440,6 +1481,10 @@ msgstr "Le statistiche sono disponibili solo per i curriculum pubblici."
 msgid "Store your backup codes securely"
 msgstr "Archivia i tuoi codici di backup in modo sicuro"
 
+#: apps/client/src/pages/home/sections/hero/index.tsx:24
+msgid "Streamline your job search with a resume that works."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
@@ -1670,10 +1715,6 @@ msgstr "Verifica che l'autenticazione a due fattori sia stata impostata corretta
 msgid "Verify your email address"
 msgstr "Verifica il tuo indirizzo email"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Versione 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Visualizzazioni"
@@ -1704,9 +1745,9 @@ msgstr "Verifichiamo il suo indirizzo e-mail solo per assicurarci di poterle inv
 msgid "Website"
 msgstr "Sito Web"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "Cosa c'è di nuovo nell'ultima versione"
+#: apps/client/src/pages/home/components/donation-banner.tsx:7
+msgid "Welcome to InternzValley Resume Builder - Create your professional resume for free!"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1779,4 +1820,3 @@ msgstr "Ingrandisci"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Rimpicciolisci"
-

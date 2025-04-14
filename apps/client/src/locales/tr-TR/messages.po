@@ -22,6 +22,16 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "İki faktörlü kimlik doğrulamayı başarıyla etkinleştirdiniz."
 
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:12
+msgid "loading"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:18
+msgid "loading.message"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "Aralarından seçim yapabileceğiniz {templatesCount} özgeçmiş şablonu"
@@ -55,23 +65,13 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>İki faktörlü kimlik doğrulama şu anda aktif.</0> Giriş yaptığınız her zaman sizden bir kod girmeniz istenecektir."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
 msgstr "Ücretsiz ve açık kaynak cv oluşturucu"
-
-#: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "Cv'nizi oluşturma, güncelleme ve paylaşma gibi adımları kolaylaştıran ücretsiz ve açık kaynak bir cv oluşturucu."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "Bağlantı panonuza kopyalandı."
-
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "<0>Amruth Pillai</0>'nin bir tutku projesi"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -242,7 +242,6 @@ msgstr "Kenar Ovalliği"
 msgid "Built with"
 msgstr "İle oluşturuldu"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "Topluluk tarafından topluluk için oluşturuldu."
@@ -354,6 +353,14 @@ msgstr "Hemen bir tane oluştur"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Örnek özgeçmiş oluştur"
+
+#: apps/client/src/providers/locale.tsx:70
+msgid "Critical: Failed to load any translations:"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:68
+msgid "Critical: Failed to load default locale ({defaultLocale})"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
@@ -561,6 +568,34 @@ msgstr "Reactive Resume'da bulunan şablonları keşfedin ve bunlarla hazırlanm
 msgid "Export"
 msgstr "Dışa aktar"
 
+#: apps/client/src/libs/lingui.ts:60
+msgid "Failed to load dayjs locale for: {locale}"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:64
+msgid "Failed to load default messages"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:64
+msgid "Failed to load messages for locale: {locale}"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:37
+msgid "Failed to load messages synchronously, trying async..."
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:60
+msgid "Failed to load translations:"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:71
+msgid "Failed to load translations. Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:72
+msgid "Falling back to default locale ({defaultLocale})"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "Dosya"
@@ -568,10 +603,6 @@ msgstr "Dosya"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "Dosya türü"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Nihayet,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -626,6 +657,11 @@ msgstr "Ömür boyu ücretsiz"
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
 msgstr "Dostça"
+
+#: apps/client/src/pages/home/components/footer.tsx:16
+#: apps/client/src/pages/home/sections/hero/index.tsx:29
+msgid "From blank page to dream job — resume building made delightful."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
@@ -769,6 +805,14 @@ msgstr "Bilgi"
 msgid "Institution"
 msgstr "Kurum"
 
+#: apps/client/src/pages/home/page.tsx:24
+msgid "InternzValley Resume Builder"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:45
+msgid "Invalid messages found for locale: {locale}"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
 msgstr "İhraççı"
@@ -860,10 +904,6 @@ msgstr "Harf"
 msgid "Level"
 msgstr "Düzey"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "<0>MIT</0> altında lisanslanmıştır"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "Açık"
@@ -884,6 +924,10 @@ msgstr "LinkedIn, JSON Özgeçmiş, vb."
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "Liste"
+
+#: apps/client/src/providers/locale.tsx:81
+msgid "Loading translations..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -979,6 +1023,10 @@ msgstr "Sosyal Ağ"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Yeni Şifre"
+
+#: apps/client/src/providers/locale.tsx:47
+msgid "No messages found"
+msgstr ""
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1130,10 +1178,6 @@ msgstr "<0>Simple Icons</0> tarafından desteklenmektedir"
 msgid "Primary Color"
 msgstr "Birincil Renk"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
-msgid "Privacy Policy"
-msgstr "Gizlilik Politikası"
-
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
@@ -1155,7 +1199,6 @@ msgstr "Yayınlayıcı"
 msgid "Raise an issue"
 msgstr "Bir sorunu dile getirin"
 
-#: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1166,8 +1209,6 @@ msgstr "Bir sorunu dile getirin"
 #: apps/client/src/pages/builder/page.tsx:60
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
@@ -1440,6 +1481,10 @@ msgstr "İstatistikler yalnızca herkese açık özgeçmişler için mevcuttur."
 msgid "Store your backup codes securely"
 msgstr "Yedekleme kodlarınızı güvenle saklayın"
 
+#: apps/client/src/pages/home/sections/hero/index.tsx:24
+msgid "Streamline your job search with a resume that works."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
@@ -1670,10 +1715,6 @@ msgstr "İki faktörlü kimlik doğrulamanın doğru şekilde kurulduğunu doğr
 msgid "Verify your email address"
 msgstr "E-posta adresinizi doğrulayın"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Sürüm 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Görüntülenmeler"
@@ -1704,9 +1745,9 @@ msgstr "E-posta adresinizi yalnızca şifrenizi unutmanız durumunda size bir ş
 msgid "Website"
 msgstr "İnternet sitesi"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "En son sürümdeki yenilikler"
+#: apps/client/src/pages/home/components/donation-banner.tsx:7
+msgid "Welcome to InternzValley Resume Builder - Create your professional resume for free!"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1779,4 +1820,3 @@ msgstr "Yakınlaştır"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Uzaklaştır"
-

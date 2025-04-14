@@ -13,9 +13,18 @@ import { logger } from "../libs/logger";
 import { updateUser } from "../services/user";
 import { useAuthStore } from "../stores/auth";
 
-// Initialize i18n instance immediately
-i18n.load(defaultLocale, {});
-i18n.activate(defaultLocale);
+// Load default messages immediately
+const loadDefaultMessages = async () => {
+  try {
+    const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
+    i18n.load(defaultLocale, defaultMessages);
+    i18n.activate(defaultLocale);
+  } catch (error: unknown) {
+    logger.error(t`Failed to load default messages:`, error);
+  }
+};
+
+void loadDefaultMessages();
 
 type Props = {
   children: React.ReactNode;
@@ -23,11 +32,14 @@ type Props = {
 
 export const LocaleProvider = ({ children }: Props) => {
   const userLocale = useAuthStore((state) => state.user?.locale ?? defaultLocale);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(userLocale !== defaultLocale);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadTranslations = async () => {
+      // If using default locale, no need to load additional translations
+      if (userLocale === defaultLocale) return;
+
       try {
         setIsLoading(true);
         setError(null);
@@ -41,33 +53,26 @@ export const LocaleProvider = ({ children }: Props) => {
           ? detectedLocale
           : defaultLocale;
 
-        // Load translations
+        // If we've fallen back to default locale, no need to load additional translations
+        if (finalLocale === defaultLocale) {
+          setIsLoading(false);
+          return;
+        }
+
+        // Load translations for the detected locale
         try {
           const { messages } = await import(`../locales/${finalLocale}/messages.js`);
           if (!messages) throw new Error(t`No messages found`);
           
           i18n.load(finalLocale, messages);
           i18n.activate(finalLocale);
-
-          // Load default locale messages for fallback if not already loaded
-          if (finalLocale !== defaultLocale) {
-            const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
-            if (defaultMessages) {
-              i18n.load(defaultLocale, defaultMessages);
-            }
-          }
-        } catch (error) {
+        } catch (error: unknown) {
           logger.error(t`Failed to load translations:`, error);
-          
-          // Try loading default locale as fallback
-          const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
-          if (!defaultMessages) throw new Error(t`Failed to load default messages`);
-          
-          i18n.load(defaultLocale, defaultMessages);
+          // Fallback to default locale (which is already loaded)
           i18n.activate(defaultLocale);
         }
-      } catch (error) {
-        logger.error(t`Critical: Failed to load any translations:`, error);
+      } catch (error: unknown) {
+        logger.error(t`Critical: Failed to load translations:`, error);
         setError(t`Failed to load translations. Please try refreshing the page.`);
       } finally {
         setIsLoading(false);

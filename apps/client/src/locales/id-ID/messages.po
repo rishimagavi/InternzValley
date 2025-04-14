@@ -22,6 +22,16 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Anda telah berhasil mengaktifkan autentikasi dua faktor."
 
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:12
+msgid "loading"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:18
+msgid "loading.message"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} templat resume yang dapat dipilih"
@@ -55,23 +65,13 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>Autentikasi dua faktor diaktifkan.</0> Anda akan diminta untuk memasukkan kode setiap kali masuk."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
 msgstr "Pembuat resume gratis dan bersumber terbuka"
-
-#: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "Pembuat resume gratis dan bersumber terbuka yang menyederhanakan proses pembuatan, pembaruan, dan berbagi resume Anda."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "Tautan telah disalin ke papan klip Anda."
-
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Sebuah proyek penuh semangat dari <0>Amruth Pillai</0>"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -242,7 +242,6 @@ msgstr "Radius Perbatasan"
 msgid "Built with"
 msgstr "Dibangun dengan"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "Oleh komunitas, untuk komunitas."
@@ -354,6 +353,14 @@ msgstr "Buat satu sekarang"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Buat Contoh Resume"
+
+#: apps/client/src/providers/locale.tsx:70
+msgid "Critical: Failed to load any translations:"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:68
+msgid "Critical: Failed to load default locale ({defaultLocale})"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
@@ -561,6 +568,34 @@ msgstr "Jelajahi templat yang tersedia di Reactive Resume dan melihat resume yan
 msgid "Export"
 msgstr "Ekspor"
 
+#: apps/client/src/libs/lingui.ts:60
+msgid "Failed to load dayjs locale for: {locale}"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:64
+msgid "Failed to load default messages"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:64
+msgid "Failed to load messages for locale: {locale}"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:37
+msgid "Failed to load messages synchronously, trying async..."
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:60
+msgid "Failed to load translations:"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:71
+msgid "Failed to load translations. Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:72
+msgid "Falling back to default locale ({defaultLocale})"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "Mengajukan"
@@ -568,10 +603,6 @@ msgstr "Mengajukan"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "Jenis file"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Akhirnya,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -626,6 +657,11 @@ msgstr "Gratis, selamanya"
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
 msgstr "Ramah"
+
+#: apps/client/src/pages/home/components/footer.tsx:16
+#: apps/client/src/pages/home/sections/hero/index.tsx:29
+msgid "From blank page to dream job — resume building made delightful."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
@@ -769,6 +805,14 @@ msgstr "Informasi"
 msgid "Institution"
 msgstr "Institusi"
 
+#: apps/client/src/pages/home/page.tsx:24
+msgid "InternzValley Resume Builder"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:45
+msgid "Invalid messages found for locale: {locale}"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
 msgstr "Penerbit"
@@ -860,10 +904,6 @@ msgstr "Surat"
 msgid "Level"
 msgstr "Tingkat"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "Berlisensi <0>MIT</0>"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "Cahaya"
@@ -884,6 +924,10 @@ msgstr "LinkedIn, Resume JSON, dll."
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "Daftar"
+
+#: apps/client/src/providers/locale.tsx:81
+msgid "Loading translations..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -979,6 +1023,10 @@ msgstr "Jaringan"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Kata Sandi Baru"
+
+#: apps/client/src/providers/locale.tsx:47
+msgid "No messages found"
+msgstr ""
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1130,10 +1178,6 @@ msgstr "Didukung oleh <0>Simple Icons</0>"
 msgid "Primary Color"
 msgstr "Warna Primer"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
-msgid "Privacy Policy"
-msgstr "Kebijakan Privasi"
-
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
@@ -1155,7 +1199,6 @@ msgstr "Penerbit"
 msgid "Raise an issue"
 msgstr "Mengajukan masalah"
 
-#: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1166,8 +1209,6 @@ msgstr "Mengajukan masalah"
 #: apps/client/src/pages/builder/page.tsx:60
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
@@ -1440,6 +1481,10 @@ msgstr "Statistik hanya tersedia untuk resume publik."
 msgid "Store your backup codes securely"
 msgstr "Menyimpan kode cadangan Anda dengan aman"
 
+#: apps/client/src/pages/home/sections/hero/index.tsx:24
+msgid "Streamline your job search with a resume that works."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
@@ -1670,10 +1715,6 @@ msgstr "Verifikasi bahwa autentikasi dua faktor telah diatur dengan benar"
 msgid "Verify your email address"
 msgstr "Verifikasi alamat email Anda"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Versi 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Tampilan"
@@ -1704,9 +1745,9 @@ msgstr "Kami memverifikasi alamat email Anda hanya untuk memastikan bahwa kami d
 msgid "Website"
 msgstr "Situs web"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "Apa yang baru dalam versi terbaru"
+#: apps/client/src/pages/home/components/donation-banner.tsx:7
+msgid "Welcome to InternzValley Resume Builder - Create your professional resume for free!"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1779,4 +1820,3 @@ msgstr "Perbesar"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Perkecil"
-

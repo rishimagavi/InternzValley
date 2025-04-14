@@ -22,6 +22,16 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "ನೀವು ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಕ್ರಿಯಗೊಳಿಸಿರುವಿರಿ."
 
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:12
+msgid "loading"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/client/src/components/loading-screen.tsx:18
+msgid "loading.message"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "ಆಯ್ಕೆ ಮಾಡಲು {templatesCount} ರೆಸ್ಯೂಮ್‌ ಟೆಂಪ್ಲೇಟ್‌ಗಳು"
@@ -55,23 +65,13 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</0> ನೀವು ಸೈನ್ ಇನ್ ಮಾಡಿದಾಗಲೆಲ್ಲಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
 msgstr "ಉಚಿತ ಮತ್ತು ಮೂಲ ಕೋಡ್ ತೆರೆದಿರುವ ರೇಜ಼ಮೈ ನಿರ್ಮಾಪಕ"
-
-#: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ರಚಿಸುವ, ನವೀಕರಿಸುವ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸರಳಗೊಳಿಸುವ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ-ಮೂಲ ಪುನರಾರಂಭ ಬಿಲ್ಡರ್."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ಲಿಂಕ್ ಅನ್ನು ನಕಲಿಸಲಾಗಿದೆ."
-
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "<0>ಅಮೃತ್ ಪಿಳ್ಳೈ</0> ಅವರಿಂದ ಒಂದು ಪ್ಯಾಶನ್ ಪ್ರಾಜೆಕ್ಟ್"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -242,7 +242,6 @@ msgstr "ಗಡಿ ತ್ರಿಜ್ಯ"
 msgid "Built with"
 msgstr "ಇದರೊಂದಿಗೆ ನಿರ್ಮಿಸಲಾಗಿದೆ"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "ಸಮುದಾಯದಿಂದ, ಸಮುದಾಯಕ್ಕಾಗಿ."
@@ -354,6 +353,14 @@ msgstr "ಇದೀಗ ಒಂದನ್ನು ರಚಿಸಿ"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "ಮಾದರಿ ರೆಸ್ಯೂಮ್‌ ರಚಿಸಿ"
+
+#: apps/client/src/providers/locale.tsx:70
+msgid "Critical: Failed to load any translations:"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:68
+msgid "Critical: Failed to load default locale ({defaultLocale})"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
@@ -561,6 +568,34 @@ msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್�
 msgid "Export"
 msgstr "ರಫ್ತು ಮಾಡು"
 
+#: apps/client/src/libs/lingui.ts:60
+msgid "Failed to load dayjs locale for: {locale}"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:64
+msgid "Failed to load default messages"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:64
+msgid "Failed to load messages for locale: {locale}"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:37
+msgid "Failed to load messages synchronously, trying async..."
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:60
+msgid "Failed to load translations:"
+msgstr ""
+
+#: apps/client/src/providers/locale.tsx:71
+msgid "Failed to load translations. Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:72
+msgid "Falling back to default locale ({defaultLocale})"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "ಕಡತ"
@@ -568,10 +603,6 @@ msgstr "ಕಡತ"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "ಕಡತದ ವರ್ಗ"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "ಅಂತಿಮವಾಗಿ,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -626,6 +657,11 @@ msgstr "ಉಚಿತ ಶಾಶ್ವತವಾಗಿ"
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
 msgstr "ಸ್ನೇಹಪರ"
+
+#: apps/client/src/pages/home/components/footer.tsx:16
+#: apps/client/src/pages/home/sections/hero/index.tsx:29
+msgid "From blank page to dream job — resume building made delightful."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
@@ -769,6 +805,14 @@ msgstr "ಮಾಹಿತಿ"
 msgid "Institution"
 msgstr "ಸಂಸ್ಥೆ"
 
+#: apps/client/src/pages/home/page.tsx:24
+msgid "InternzValley Resume Builder"
+msgstr ""
+
+#: apps/client/src/libs/lingui.ts:45
+msgid "Invalid messages found for locale: {locale}"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
 msgstr "ನೀಡುವವರು"
@@ -860,10 +904,6 @@ msgstr "ಪತ್ರಗಳು"
 msgid "Level"
 msgstr "ಮಟ್ಟ"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "<0>MIT</0> ಅಡಿಯಲ್ಲಿ ಪರವಾನಗಿ ಪಡೆದಿದೆ"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "ತಿಳಿ ಬಣ್ಣ"
@@ -884,6 +924,10 @@ msgstr "ಲಿಂಕ್ಡ್‌ಇನ್, JSON ರೆಸ್ಯೂಮ್, ಇತ
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "ಪಟ್ಟಿ"
+
+#: apps/client/src/providers/locale.tsx:81
+msgid "Loading translations..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -979,6 +1023,10 @@ msgstr "ನೆಟ್ವರ್ಕ್"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "ಹೊಸ ಪಾಸ್ವರ್ಡ್"
+
+#: apps/client/src/providers/locale.tsx:47
+msgid "No messages found"
+msgstr ""
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1130,10 +1178,6 @@ msgstr "<0>ಸರಳ ಐಕಾನ್‌ಗಳಿಂದ</0> ನಡೆಸಲ್ಪ
 msgid "Primary Color"
 msgstr "ಪ್ರಾಥಮಿಕ ಬಣ್ಣ"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
-msgid "Privacy Policy"
-msgstr ""
-
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
@@ -1155,7 +1199,6 @@ msgstr "ಪ್ರಕಾಶಕರು"
 msgid "Raise an issue"
 msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ್ಳಿ"
 
-#: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1166,8 +1209,6 @@ msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ�
 #: apps/client/src/pages/builder/page.tsx:60
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
@@ -1440,6 +1481,10 @@ msgstr "ಅಂಕಿಅಂಶಗಳು ಸಾರ್ವಜನಿಕ ರೆಸ್�
 msgid "Store your backup codes securely"
 msgstr "ನಿಮ್ಮ ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಸಂಗ್ರಹಿಸಿ"
 
+#: apps/client/src/pages/home/sections/hero/index.tsx:24
+msgid "Streamline your job search with a resume that works."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
@@ -1670,10 +1715,6 @@ msgstr "ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ಸರ
 msgid "Verify your email address"
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಪರಿಶೀಲಿಸಿ"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "ಆವೃತ್ತಿ 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "ವೀಕ್ಷಣೆಗಳು"
@@ -1704,9 +1745,9 @@ msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವ
 msgid "Website"
 msgstr "ಜಾಲತಾಣ"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯಲ್ಲಿ ಹೊಸದೇನಿದೆ"
+#: apps/client/src/pages/home/components/donation-banner.tsx:7
+msgid "Welcome to InternzValley Resume Builder - Create your professional resume for free!"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1779,4 +1820,3 @@ msgstr "ಗಾತ್ರ ಹಿಗ್ಗಿಸಿ"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "ಗಾತ್ರ ಕುಗ್ಗಿಸಿ"
-

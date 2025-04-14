@@ -4,8 +4,8 @@ module.exports = {
   sourceLocale: "en-US",
   catalogs: [
     {
-      path: "src/locales/{locale}/messages",
-      include: ["src"],
+      path: "./src/locales/{locale}/messages",
+      include: ["./src"],
     },
   ],
   format: "js",
