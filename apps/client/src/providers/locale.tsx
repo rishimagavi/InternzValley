@@ -39,7 +39,7 @@ export const LocaleProvider = ({ children }: Props) => {
         // Set default messages for fallback
         if (finalLocale !== defaultLocale) {
           try {
-            const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.po`);
+            const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
             i18n.load(defaultLocale, defaultMessages);
           } catch (error) {
             logger.error("Failed to load default locale messages:", error);
@@ -67,10 +67,10 @@ export const LocaleProvider = ({ children }: Props) => {
       <div className="flex h-screen w-screen items-center justify-center">
         <div className="text-center">
           <div className="mb-2 text-2xl font-bold">
-            <Trans>Loading...</Trans>
+            <Trans id="loading">Loading...</Trans>
           </div>
           <div className="text-sm opacity-75">
-            <Trans>Please wait while we load your preferred language.</Trans>
+            <Trans id="loading.message">Please wait while we load your preferred language.</Trans>
           </div>
         </div>
       </div>
