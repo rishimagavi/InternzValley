@@ -80,9 +80,9 @@ export const TestimonialsSection = () => (
     </div>
 
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-y-0">
-      {testimonials.map((columnGroup, groupIndex) => (
+      {testimonials?.map((columnGroup, groupIndex) => (
         <div key={groupIndex} className="space-y-8">
-          {columnGroup.map((testimonial, index) => (
+          {columnGroup?.map((testimonial, index) => (
             <motion.figure
               key={index}
               initial={{ opacity: 0, y: -100 }}
@@ -94,9 +94,9 @@ export const TestimonialsSection = () => (
             >
               <Quotes size={64} className="absolute -right-3 bottom-0 opacity-20" />
               <blockquote className="italic leading-relaxed">
-                &ldquo;{testimonial.quote}&rdquo;
+                &ldquo;{testimonial?.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-3 font-medium">{testimonial.name}</figcaption>
+              <figcaption className="mt-3 font-medium">{testimonial?.name}</figcaption>
             </motion.figure>
           ))}
         </div>
