@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "pnpm build",
-  "outputDirectory": "apps/client/dist",
+  "outputDirectory": "dist/apps/client",
   "installCommand": "pnpm install",
   "framework": "vite",
   "rewrites": [
