@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "pnpm build",
-  "outputDirectory": "dist/apps/client",
+  "buildCommand": "pnpm nx build client",
+  "outputDirectory": "apps/client/dist",
   "installCommand": "pnpm install",
   "framework": "vite",
   "rewrites": [
