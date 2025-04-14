@@ -9,16 +9,26 @@ export async function dynamicActivate(locale: string) {
   try {
     const { messages } = await import(`../locales/${locale}/messages.po`);
 
-    if (messages) {
-      i18n.loadAndActivate({ locale, messages });
+    if (!messages) {
+      throw new Error(`No messages found for locale: ${locale}`);
     }
+
+    i18n.load(locale, messages);
+    i18n.activate(locale);
 
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (dayjsLocales[locale]) {
       dayjs.locale(await dayjsLocales[locale]());
     }
-  } catch {
-    // eslint-disable-next-line lingui/no-unlocalized-strings
-    throw new Error(`Failed to load messages for locale: ${locale}`);
+  } catch (error) {
+    console.error(`Failed to load messages for locale: ${locale}`, error);
+    
+    // If default locale fails, throw error
+    if (locale === defaultLocale) {
+      throw error;
+    }
+    
+    // Try loading default locale as fallback
+    return dynamicActivate(defaultLocale);
   }
 }

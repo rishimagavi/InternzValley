@@ -4,7 +4,7 @@ import { i18n } from "@lingui/core";
 import { detect, fromStorage, fromUrl } from "@lingui/detect-locale";
 import { I18nProvider } from "@lingui/react";
 import { languages } from "@reactive-resume/utils";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { defaultLocale, dynamicActivate } from "../libs/lingui";
 import { updateUser } from "../services/user";
@@ -16,18 +16,34 @@ type Props = {
 
 export const LocaleProvider = ({ children }: Props) => {
   const userLocale = useAuthStore((state) => state.user?.locale ?? defaultLocale);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const detectedLocale =
-      detect(fromUrl("locale"), fromStorage("locale"), userLocale, defaultLocale) ?? defaultLocale;
+    const loadTranslations = async () => {
+      try {
+        const detectedLocale =
+          detect(fromUrl("locale"), fromStorage("locale"), userLocale, defaultLocale) ?? defaultLocale;
 
-    // Activate the locale only if it's supported
-    if (languages.some((lang) => lang.locale === detectedLocale)) {
-      void dynamicActivate(detectedLocale);
-    } else {
-      void dynamicActivate(defaultLocale);
-    }
+        // Activate the locale only if it's supported
+        if (languages.some((lang) => lang.locale === detectedLocale)) {
+          await dynamicActivate(detectedLocale);
+        } else {
+          await dynamicActivate(defaultLocale);
+        }
+      } catch (error) {
+        console.error("Failed to load translations:", error);
+        await dynamicActivate(defaultLocale);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    void loadTranslations();
   }, [userLocale]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return <I18nProvider i18n={i18n}>{children}</I18nProvider>;
 };
