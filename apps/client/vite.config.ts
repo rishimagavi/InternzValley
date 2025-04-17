@@ -30,6 +30,13 @@ export default defineConfig({
     host: true,
     port: 5173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false
+      }
+    }
   },
 
   optimizeDeps: {
@@ -48,6 +55,19 @@ export default defineConfig({
     }),
     lingui(),
     nxViteTsPaths(),
+    {
+      name: 'vite-plugin-locale-fallback',
+      generateBundle(_, bundle) {
+        // Create an empty fallback messages file if it doesn't exist
+        if (!bundle['assets/locales/en-US/messages.js']) {
+          this.emitFile({
+            type: 'asset',
+            fileName: 'assets/locales/en-US/messages.js',
+            source: 'export const messages = {};'
+          });
+        }
+      }
+    }
   ],
 
   test: {

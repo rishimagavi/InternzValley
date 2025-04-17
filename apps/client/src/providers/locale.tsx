@@ -16,11 +16,24 @@ import { useAuthStore } from "../stores/auth";
 // Load default messages immediately
 const loadDefaultMessages = async () => {
   try {
-    const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
+    // First try direct import
+    let defaultMessages;
+    try {
+      const imported = await import(`../locales/${defaultLocale}/messages.js`);
+      defaultMessages = imported.messages;
+    } catch (importError) {
+      // Fallback to empty messages if import fails
+      defaultMessages = {};
+      logger.warn(t`Using empty messages for default locale due to import error`);
+    }
+    
     i18n.load(defaultLocale, defaultMessages);
     i18n.activate(defaultLocale);
   } catch (error: unknown) {
     logger.error(t`Failed to load default messages:`, error);
+    // Fallback to empty messages
+    i18n.load(defaultLocale, {});
+    i18n.activate(defaultLocale);
   }
 };
 
@@ -61,8 +74,17 @@ export const LocaleProvider = ({ children }: Props) => {
 
         // Load translations for the detected locale
         try {
-          const { messages } = await import(`../locales/${finalLocale}/messages.js`);
-          if (!messages) throw new Error(t`No messages found`);
+          let messages;
+          try {
+            const imported = await import(`../locales/${finalLocale}/messages.js`);
+            messages = imported.messages;
+            if (!messages) throw new Error(t`No messages found`);
+          } catch (importError) {
+            logger.warn(t`Fallback to default locale due to import error for: ${finalLocale}`);
+            i18n.activate(defaultLocale);
+            setIsLoading(false);
+            return;
+          }
           
           i18n.load(finalLocale, messages);
           i18n.activate(finalLocale);

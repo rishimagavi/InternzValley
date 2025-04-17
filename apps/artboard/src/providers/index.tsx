@@ -11,11 +11,24 @@ import { useArtboardStore } from "../store/artboard";
 // Load default messages immediately
 const loadDefaultMessages = async () => {
   try {
-    const { messages: defaultMessages } = await import(`../locales/${defaultLocale}/messages.js`);
+    // First try direct import
+    let defaultMessages;
+    try {
+      const imported = await import(`../locales/${defaultLocale}/messages.js`);
+      defaultMessages = imported.messages;
+    } catch (importError) {
+      // Fallback to empty messages if import fails
+      defaultMessages = {};
+      console.warn(`Using empty messages for default locale due to import error`);
+    }
+    
     i18n.load(defaultLocale, defaultMessages);
     i18n.activate(defaultLocale);
   } catch (error: unknown) {
     console.error("Failed to load artboard messages:", error);
+    // Fallback to empty messages
+    i18n.load(defaultLocale, {});
+    i18n.activate(defaultLocale);
   }
 };
 
