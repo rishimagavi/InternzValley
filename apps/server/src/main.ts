@@ -91,16 +91,21 @@ if (process.env.VERCEL !== "1") {
 }
 
 // For serverless environments (Vercel)
-export async function handleRequest(req: Request, res: Response) {
-  const server = await bootstrap();
-  const httpAdapter = server.getHttpAdapter();
-  
-  // Use Express instance to handle the request
-  const expressInstance = httpAdapter.getInstance();
-  expressInstance(req, res);
+async function handleRequest(req: Request, res: Response) {
+  try {
+    const server = await bootstrap();
+    const httpAdapter = server.getHttpAdapter();
+    
+    // Use Express instance to handle the request
+    const expressInstance = httpAdapter.getInstance();
+    expressInstance(req, res);
+  } catch (error) {
+    Logger.error(`Error handling request: ${error.message}`, error.stack, "ServerlessHandler");
+    res.status(500).json({ error: "Internal Server Error", message: error.message });
+  }
 }
 
-// Export for Vercel serverless function
-export default {
-  handleRequest
-};
+// Export for serverless function
+export { handleRequest };
+// Also export as default for compatibility
+export default handleRequest;
