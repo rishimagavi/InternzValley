@@ -40,15 +40,24 @@ export class StorageService implements OnModuleInit {
 
   private client: MinioClient;
   private bucketName: string;
+  private isDevelopment: boolean;
 
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly minioService: MinioService,
-  ) {}
+  ) {
+    this.isDevelopment = this.configService.get<string>("NODE_ENV") === "development";
+  }
 
   async onModuleInit() {
     this.client = this.minioService.client;
     this.bucketName = this.configService.getOrThrow<string>("STORAGE_BUCKET");
+    
+    // In development mode, we'll use a mock storage service
+    if (this.isDevelopment) {
+      this.logger.warn("Running in development mode - using mock storage service");
+      return;
+    }
 
     const skipBucketCheck = this.configService.getOrThrow<boolean>("STORAGE_SKIP_BUCKET_CHECK");
 
@@ -100,6 +109,11 @@ export class StorageService implements OnModuleInit {
   }
 
   async bucketExists(): Promise<true> {
+    // In development mode, always return true
+    if (this.isDevelopment) {
+      return true;
+    }
+
     const exists = await this.client.bucketExists(this.bucketName);
 
     if (!exists) {
@@ -125,6 +139,12 @@ export class StorageService implements OnModuleInit {
 
     const filepath = `${userId}/${type}/${normalizedFilename}.${extension}`;
     const url = `${storageUrl}/${filepath}`;
+
+    // In development mode, just return a mock URL without uploading
+    if (this.isDevelopment) {
+      this.logger.log(`[MOCK] Uploaded object to: ${url}`);
+      return url;
+    }
 
     const metadata =
       extension === "jpg"
@@ -152,6 +172,12 @@ export class StorageService implements OnModuleInit {
   }
 
   async deleteObject(userId: string, type: UploadType, filename: string): Promise<void> {
+    // In development mode, just log and return
+    if (this.isDevelopment) {
+      this.logger.log(`[MOCK] Deleted object: ${userId}/${type}/${filename}`);
+      return;
+    }
+
     const extension = type === "resumes" ? "pdf" : "jpg";
     const path = `${userId}/${type}/${filename}.${extension}`;
 
@@ -165,6 +191,12 @@ export class StorageService implements OnModuleInit {
   }
 
   async deleteFolder(prefix: string): Promise<void> {
+    // In development mode, just log and return
+    if (this.isDevelopment) {
+      this.logger.log(`[MOCK] Deleted folder: ${prefix}`);
+      return;
+    }
+
     const objectsList = [];
     const objectsStream = this.client.listObjectsV2(this.bucketName, prefix, true);
 
