@@ -17,7 +17,7 @@ type OpenAIStore = {
 export const useOpenAiStore = create<OpenAIStore>()(
   persist(
     (set) => ({
-      baseURL: null,
+      baseURL: "https://internzvalley-backend.onrender.com", // Updated base URL
       setBaseURL: (baseURL: string | null) => {
         set({ baseURL });
       },
