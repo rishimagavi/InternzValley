@@ -46,7 +46,7 @@ async function bootstrap() {
     // app.enableCors({ credentials: true, origin: isHTTPS });
     app.enableCors({
       credentials: true,
-      origin: ["https://internzvalley.diaries2024.com"],
+      origin: publicUrl,
     });
 
     // Helmet - enabled only in production
